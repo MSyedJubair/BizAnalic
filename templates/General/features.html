@@ -1,0 +1,343 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features | BankAnalytics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      :root {
+        --bg: #0b1528;
+        --bg-light: #101c36;
+        --card: #1e293b;
+        --accent: #2dd4bf;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* Navbar */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 28px;
+        backdrop-filter: blur(6px);
+        background: linear-gradient(
+          180deg,
+          rgba(4, 10, 25, 0.18),
+          rgba(4, 10, 25, 0.06)
+        );
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      .nav-inner {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .logo {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo-title {
+        font-size: 1.2rem;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+      }
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+      .nav-links a:hover {
+        color: #fff;
+      }
+
+      /* Header */
+      .header {
+        padding-top: 120px;
+        text-align: center;
+        margin-bottom: 50px;
+        animation: fadeIn 1s ease-out;
+      }
+      .header h1 {
+        font-size: 36px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .header p {
+        font-size: 18px;
+        color: var(--muted);
+        max-width: 700px;
+        margin: auto;
+      }
+
+      /* Features Grid */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .feature-card {
+        background: var(--card);
+        padding: 30px 20px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: fadeInUp 1s ease-out;
+      }
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      }
+      .feature-card i {
+        color: var(--accent);
+        font-size: 36px;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .feature-card h3 {
+        font-size: 20px;
+        margin: 10px 0;
+        font-weight: 600;
+      }
+      .feature-card p {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* Optional preview */
+      .preview {
+        text-align: center;
+        margin: 80px auto;
+        max-width: 900px;
+      }
+      .preview img {
+        max-width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        animation: slideUp 1s ease-out;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(60px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 28px;
+        }
+        .header p {
+          font-size: 16px;
+        }
+        nav {
+          padding: 15px 20px;
+        }
+        nav .links a {
+          margin: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="nav" role="navigation" aria-label="Main">
+      <div class="nav-inner">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 200 200"
+            width="100"
+            height="100"
+          >
+            <defs>
+              <linearGradient
+                id="electricGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#00f0ff" />
+                <stop offset="100%" stop-color="#0066ff" />
+              </linearGradient>
+            </defs>
+
+            <!-- Hexagon wave -->
+            <g transform="translate(100,100)">
+              <polygon
+                points="10,0 5,8.66 -5,8.66 -10,0 -5,-8.66 5,-8.66"
+                fill="#00aaff"
+                opacity="0.7"
+              />
+              <polygon
+                points="20,0 15,8.66 5,8.66 0,0 5,-8.66 15,-8.66"
+                fill="#00ccff"
+                opacity="0.6"
+              />
+              <polygon
+                points="30,0 25,8.66 15,8.66 10,0 15,-8.66 25,-8.66"
+                fill="#0099ff"
+                opacity="0.5"
+              />
+              <polygon
+                points="40,0 35,8.66 25,8.66 20,0 25,-8.66 35,-8.66"
+                fill="#00e6ff"
+                opacity="0.4"
+              />
+            </g>
+
+            <!-- Electric line -->
+            <path
+              d="M60,140 C80,60 140,140 160,60"
+              stroke="url(#electricGradient)"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+            />
+          </svg>
+          <div class="logo-title">BIZANALIC</div>
+        </div>
+        <div class="nav-links" role="menu">
+          <a href="/">Home</a>
+          <a href="/features">Features</a>
+          <a href="/about">About</a>
+          <a href="/dashboard">Dashboard</a>
+        </div>
+        <div style="width: 200px;"></div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+      <h1>Features</h1>
+      <p>
+        Discover the powerful tools BankAnalytics offers to make managing your
+        finances smarter and easier.
+      </p>
+    </header>
+
+    <!-- Features Grid -->
+    <section class="features">
+      <div class="feature-card">
+        <i data-lucide="upload"></i>
+        <h3>File Upload</h3>
+        <p>
+          Easily upload your bank statements in multiple formats for instant
+          analysis.
+        </p>
+      </div>
+      <div class="feature-card">
+        <i data-lucide="bar-chart-2"></i>
+        <h3>Expense Analytics</h3>
+        <p>
+          Track and categorize spending across different accounts and time
+          periods.
+        </p>
+      </div>
+      <div class="feature-card">
+        <i data-lucide="pie-chart"></i>
+        <h3>Interactive Charts</h3>
+        <p>
+          Visualize your income, expenses, and savings with interactive charts
+          and graphs.
+        </p>
+      </div>
+      <div class="feature-card">
+        <i data-lucide="calendar"></i>
+        <h3>Monthly Trends</h3>
+        <p>
+          Identify spending patterns and monitor growth with month-by-month
+          comparisons.
+        </p>
+      </div>
+      <div class="feature-card">
+        <i data-lucide="download"></i>
+        <h3>Download Reports</h3>
+        <p>
+          Export your insights and reports in PDF or CSV formats for
+          record-keeping.
+        </p>
+      </div>
+      <div class="feature-card">
+        <i data-lucide="shield-check"></i>
+        <h3>Secure Data</h3>
+        <p>
+          Your data is encrypted and securely processed to protect your
+          financial privacy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Optional Preview -->
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

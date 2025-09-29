@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About BankAnalytics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        color: #fff;
+        background: linear-gradient(135deg, #0a192f, #112d4e, #1e3c72);
+        overflow-x: hidden;
+        height: 100vh;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 28px;
+        backdrop-filter: blur(6px);
+        background: linear-gradient(
+          180deg,
+          rgba(4, 10, 25, 0.18),
+          rgba(4, 10, 25, 0.06)
+        );
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      .nav-inner {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .logo {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo-title {
+        font-size: 1.2rem;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+      }
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        color: rgb(179, 179, 179)
+      }
+      .nav-links a:hover {
+        color: #fff;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 150px 10% 50px 10%;
+        text-align: center;
+        animation: fadeInUp 1.5s ease;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #cfd8e3;
+        max-width: 700px;
+        margin: 0 auto 50px auto;
+      }
+
+      /* Cards Section */
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        padding: 50px 10%;
+        animation: fadeInUp 1.5s ease;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-left: 5px solid #3a86ff;
+        padding: 20px;
+        border-radius: 12px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .card h3 {
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        color: #3a86ff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .card svg {
+        width: 24px;
+        height: 24px;
+        fill: #3a86ff;
+      }
+
+      .card p {
+        color: #cfd8e3;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="nav" role="navigation" aria-label="Main">
+      <div class="nav-inner">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 200 200"
+            width="100"
+            height="100"
+          >
+            <defs>
+              <linearGradient
+                id="electricGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#00f0ff" />
+                <stop offset="100%" stop-color="#0066ff" />
+              </linearGradient>
+            </defs>
+
+            <!-- Hexagon wave -->
+            <g transform="translate(100,100)">
+              <polygon
+                points="10,0 5,8.66 -5,8.66 -10,0 -5,-8.66 5,-8.66"
+                fill="#00aaff"
+                opacity="0.7"
+              />
+              <polygon
+                points="20,0 15,8.66 5,8.66 0,0 5,-8.66 15,-8.66"
+                fill="#00ccff"
+                opacity="0.6"
+              />
+              <polygon
+                points="30,0 25,8.66 15,8.66 10,0 15,-8.66 25,-8.66"
+                fill="#0099ff"
+                opacity="0.5"
+              />
+              <polygon
+                points="40,0 35,8.66 25,8.66 20,0 25,-8.66 35,-8.66"
+                fill="#00e6ff"
+                opacity="0.4"
+              />
+            </g>
+
+            <!-- Electric line -->
+            <path
+              d="M60,140 C80,60 140,140 160,60"
+              stroke="url(#electricGradient)"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+            />
+          </svg>
+          <div class="logo-title">BIZANALIC</div>
+        </div>
+        <div class="nav-links" role="menu">
+          <a href="/">Home</a>
+          <a href="/features">Features</a>
+          <a href="/about">About</a>
+          <a href="/dashboard">Dashboard</a>
+        </div>
+        <div style="width: 200px"></div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>About BankAnalytics</h1>
+      <p>
+        BankAnalytics is a web platform that helps users understand their
+        finances by uploading bank statements and visualizing spending, income,
+        and savings trends in an interactive dashboard.
+      </p>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-container">
+      <!-- Upload Feature -->
+      <div class="card">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.34v4h4V9h3.34L12 2z" />
+          </svg>
+          Easy Upload
+        </h3>
+        <p>
+          Users can quickly upload bank statements in CSV, Excel, or PDF formats
+          to begin their financial analysis immediately.
+        </p>
+      </div>
+
+      <!-- Analytics Feature -->
+      <div class="card">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M3 17h2v-7H3v7zm4 0h2v-4H7v4zm4 0h2v-9h-2v9zm4 0h2v-2h-2v2zm4 0h2v-12h-2v12z"
+            />
+          </svg>
+          Detailed Analytics
+        </h3>
+        <p>
+          Get deep insights into income, expenses, and savings trends with
+          automatic categorization of transactions.
+        </p>
+      </div>
+
+      <!-- Charts Feature -->
+      <div class="card">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 13h3v5H7v-5zm5-7h3v12h-3V6zm5 4h3v8h-3v-8z"
+            />
+          </svg>
+          Interactive Charts
+        </h3>
+        <p>
+          Visualize your finances through pie, bar, and line charts that
+          highlight trends, spending categories, and savings patterns.
+        </p>
+      </div>
+
+      <!-- Reports Feature -->
+      <div class="card">
+        <h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            />
+          </svg>
+          Export Reports
+        </h3>
+        <p>
+          Download your analytics as PDF or Excel reports for personal tracking
+          or sharing purposes.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
