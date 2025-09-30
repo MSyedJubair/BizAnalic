@@ -49,6 +49,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
 ]
 
 ROOT_URLCONF = "myproject.urls"
@@ -131,6 +132,9 @@ STATIC_URL = "static/"
 STATIC_URL = '/static/'  # URL to access static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Global static directory
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Collected static files (for production)
+
+# Optional: enable gzip/brotli compression
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'  # URL to access media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  
