@@ -8,7 +8,7 @@ This repository contains a Django project (`myproject`) and a single app `main`.
 
 ## Highlights
 
-![Dashboard Preview](static/images/dashboard.png)
+![Dashboard Preview](static/Images/Dashboard.png)
 
 - Upload bank statements in **CSV, Excel (.xls/.xlsx), or PDF** formats.  
 - PDF parsing via [`pdfplumber`](https://github.com/jsvine/pdfplumber) with regex-based transaction extraction.  
@@ -20,10 +20,10 @@ This repository contains a Django project (`myproject`) and a single app `main`.
 ## Screenshots
 
 **Home Page**  
-![Home Page](static/images/home.png)
+![Home Page](static/Images/Home.png)
 
 **Features Page**  
-![Features Page](static/images/features.png)
+![Features Page](static/Images/Features.png)
 
 **About Page**
 ![About Page](static/Images/About.png)
